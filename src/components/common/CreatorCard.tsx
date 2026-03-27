@@ -57,17 +57,19 @@ const CreatorCard: React.FC<CreatorCardProps> = ({ creator, className }) => {
 	return (
 		<div
 			className={cn(
-				'group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 transition-all hover:border-amber-500/30 hover:bg-white/10',
+				'group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 transition-[border-color,background-color,transform,box-shadow] duration-300 md:hover:-translate-y-1 md:hover:border-amber-400/35 md:hover:bg-white/[0.08] md:hover:shadow-[0_12px_30px_rgba(0,0,0,0.25)]',
 				className
 			)}
 		>
+			<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,transparent_10%,rgba(255,186,73,0.1)_50%,transparent_90%)] opacity-0 transition-opacity duration-300 md:group-hover:opacity-100" />
+
 			<div className="relative mb-4 aspect-square overflow-hidden rounded-xl">
 				<img
 					src={creator.thumbnail || '/icons/avatar.png'}
 					alt={creator.title}
-					className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+					className="size-full object-cover transition-transform duration-500 md:group-hover:scale-105"
 				/>
-				<div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+				<div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 md:group-hover:opacity-100" />
 			</div>
 
 			<div className="mb-4">
