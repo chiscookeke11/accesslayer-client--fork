@@ -8,6 +8,7 @@ import EmptyState from '@/components/common/EmptyState';
 import SectionDivider from '@/components/common/SectionDivider';
 import { Button } from '@/components/ui/button';
 import { UnavailableAction } from '@/components/ui/unavailable-action';
+import SectionHeading from '@/components/common/SectionHeading';
 
 // Fallback demo data in case API fails
 const DEMO_CREATORS: Course[] = [
@@ -149,6 +150,13 @@ function LandingPage() {
         <SectionDivider title="Marketplace results" spacing="default" />
 
         <section className="mt-2">
+          <SectionHeading
+            title="Explore creators"
+            supportingText="Discover creator profiles and marketplace listings."
+            className="mb-7"
+            supportingTextClassName="max-w-3xl"
+          />
+
           {isLoading ? (
             <CreatorGridSkeleton count={6} />
           ) : filteredCreators.length > 0 ? (
